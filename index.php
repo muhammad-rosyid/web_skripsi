@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Agency - Start Bootstrap Theme</title>
+        <title>MY AQUASCAPE</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="" /></a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/myaqua.png" alt="" /></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ml-1"></i>
@@ -29,7 +29,7 @@
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pengendalidanpemantau">Pengendali & Pemantau</a></li>
                         <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li> -->
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#tentang">Tentang Aquascape</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#tentang">Tentang Website & Aquascape</a></li>
                         <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li> -->
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Keluar">Keluar</a></li>
                     </ul>
@@ -59,6 +59,13 @@
                         </span>
                         <h4 class="my-3">LAMPU LED</h4>
                         <p class="text-muted">Kondisi LAMPU LED : ON/OFF</p>
+                        <form>
+                        <div class="form-group">
+                            <label for="nama">Tentukan Waktu:</label>
+                            <input type="text" class="form-control">
+                        </div> 
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
@@ -66,8 +73,8 @@
                             <i class="fas fa-tint fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Nilai pH</h4>
-                        <p class="text-muted">7</p>
-                        <p class="text-muted">Kondisi pH air : Normal/Asam/Basa<p>
+                        <p class="text-muted" id="ph"></p>
+                        <p class="text-muted" id="status_ph"><p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
@@ -75,8 +82,8 @@
                             <i class="fas fa-temperature-low fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Suhu Air</h4>
-                        <p class="text-muted">30°C</p>
-                        <p class="text-muted">Suhu Air : Rendah/Tinggi<p>
+                        <p class="text-muted" id="suhu"></p>
+                        <p class="text-muted" id="status_suhu"><p>
                     </div>
                 </div>
             </div>
@@ -180,11 +187,11 @@
         <section class="page-section" id="tentang">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Tentang Aquascape</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Tentang Website & Aquascape</h2>
+                    <h3 class="section-subheading text-muted">all about this page</h3>
                 <div class="row">
-                    <div class="col-lg-4 ml-auto"><p class="lead" style="text-align: justify;">website monitoring ini berfungsi sebagai penampil informasi-informasi dari alat pemberi pakan ikan otomatis pada aquarium dari jarak jauh .</p></div>
-                    <div class="col-lg-4 mr-auto"><p class="lead" style="text-align: justify;">Indormasi yang bisa didapatkan seperti kondisi ketersediaan pakan, kondisi suhu pada aquarium serta kondisi kekeruhan pada air aquarium .</p></div>
+                    <div class="col-lg-4 ml-auto"><p class="lead" style="text-align: justify;">website pengendali & pemantau ini berfungsi sebagai penampil informasi-informasi dari alat seperti lampu LED yang juga bisa dikendalikan waktu aktivitasnya, kondisi kualitas air yang menggunakan sensor pH, dan kondisi suhu air pada aquascape dari jarak jauh .</p></div>
+                    <div class="col-lg-4 mr-auto"><p class="lead" style="text-align: justify;">Aquascape adalah seni mengatur tanaman, air, batu, karang, kayu, dan yang lainnya di dalam media kaca atau akrilik, berbentuk kotak kaca mau pun bentuk lainnya yang serupa akuarium. Aquascape tidak hanya memelihara ikan tapi juga memelihara semua komponen yang ada di dalam akuarium, dengan berbagai pendekatan dan ketelitian.</p></div>
                 </div>
         <!-- Team-->
         <!-- <section class="page-section bg-light" id="team">
@@ -491,8 +498,18 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Keluar form JS-->
         <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/Keluar_me.js"></script>
+        <!-- <script src="assets/mail/Keluar_me.js"></script> -->
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+        <script src="js/fire.js"></script>
+
+
+
     </body>
 </html>
