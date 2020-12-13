@@ -58,7 +58,7 @@
                             <i class="fas fa-lightbulb fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">LAMPU LED</h4>
-                        <p class="text-muted">Kondisi LAMPU LED : ON/OFF</p>
+                        <p class="text-muted">Kondisi LAMPU LED : <b class="text-danger" id="statusLED">OFF</b></p>
                         <div class="text-center mb-3">
                             Jam <b class="jamAwal">12:00</b> - <b class="jamAkhir">13:00</b>
                         </div>

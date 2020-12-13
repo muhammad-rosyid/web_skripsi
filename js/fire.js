@@ -53,6 +53,16 @@ function getData(snap) {
         $('#status_suhu').addClass('text-danger')
         $('#status_suhu').removeClass('text-success')
     }
+    
+    $('#statusLED').html(data.statusLED)
+    if(data.statusLED == "ON"){
+        $('#statusLED').addClass('text-success')
+        $('#statusLED').removeClass('text-danger')
+    } else {
+        $('#statusLED').addClass('text-danger')
+        $('#statusLED').removeClass('text-success')
+    }
+
     $('#status_ph').html(data.ketPH)
     $('#status_suhu').html(data.ketSUHU)
     $('.jamAwal').html(data.jamAwal)
