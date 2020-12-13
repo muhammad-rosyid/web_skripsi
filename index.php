@@ -59,13 +59,35 @@
                         </span>
                         <h4 class="my-3">LAMPU LED</h4>
                         <p class="text-muted">Kondisi LAMPU LED : ON/OFF</p>
-                        <form>
-                        <div class="form-group">
-                            <label for="nama">Tentukan Waktu:</label>
-                            <input type="text" class="form-control">
-                        </div> 
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+                        <div class="text-center mb-3">
+                            Jam <b class="jamAwal">12:00</b> - <b class="jamAkhir">13:00</b>
+                        </div>
+                        <form id="setWaktu">
+                            <div class="row">
+                                <div class="col-6">
+                                <div class="form-group">
+                                    <input type="text" id="inputJamAwal" class="form-control" placeholder="Awal">
+                                </div> 
+                                </div>
+                                <div class="col-6">
+                                <div class="form-group">
+                                    <input type="text" id="inputJamAkhir" class="form-control" placeholder="Akhir">
+                                </div> 
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block text-dark">Submit</button>
+                        </form>
+                        <!-- <form>
+                            <div class="form-group">
+                                <label for="nama">Tentukan Waktu Awal:</label>
+                                <input type="text" class="form-control">
+                            </div> 
+                            <div class="form-group">
+                                <label for="nama">Tentukan Waktu Akhir:</label>
+                                <input type="text" class="form-control">
+                            </div> 
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form> -->
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
@@ -73,8 +95,8 @@
                             <i class="fas fa-tint fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Nilai pH</h4>
-                        <p class="text-muted" id="ph"></p>
-                        <p class="text-muted" id="status_ph"><p>
+                        <h1 class="text-muted" id="ph"></h1>
+                        <h5 class="text-success" id="status_ph"></h5>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
@@ -82,8 +104,8 @@
                             <i class="fas fa-temperature-low fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Suhu Air</h4>
-                        <p class="text-muted" id="suhu"></p>
-                        <p class="text-muted" id="status_suhu"><p>
+                        <h1 class="text-muted" id="suhu"></h1>
+                        <h5 class="text-success" id="status_suhu"></h5>
                     </div>
                 </div>
             </div>
@@ -509,6 +531,20 @@
         <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
         <script src="js/fire.js"></script>
 
+        <script>
+            $('#setWaktu').submit(function(e){
+                e.preventDefault()
+                var jamAwal = $('#inputJamAwal').val()
+                var jamAkhir = $('#inputJamAkhir').val()
+                database.ref().child("alat").child('data_alat').child('jamAwal').set(jamAwal)
+                database.ref().child("alat").child('data_alat').child('jamAkhir').set(jamAkhir)
+
+                $('#inputJamAwal').val('')
+                $('#inputJamAkhir').val('')
+
+                alert('Berhasil merubah data')
+            })
+        </script>
 
 
     </body>

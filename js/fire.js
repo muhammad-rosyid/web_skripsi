@@ -36,8 +36,13 @@ function getData(snap) {
     
     // };
     
-    document.getElementById('suhu').innerHTML += data.suhu + '&deg; C';
-    document.getElementById('ph').innerHTML += data.pH + ' ';
+    document.getElementById('suhu').innerHTML = data.suhu + '&deg; C';
+    document.getElementById('ph').innerHTML = data.pH + ' ';
+    $('#status_ph').html(data.ketPH)
+    $('#status_suhu').html(data.ketSUHU)
+    $('.jamAwal').html(data.jamAwal)
+    $('.jamAkhir').html(data.jamAkhir)
+
 
 }
 function errData(err) {
