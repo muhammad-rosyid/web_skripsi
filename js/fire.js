@@ -38,6 +38,21 @@ function getData(snap) {
     
     document.getElementById('suhu').innerHTML = data.suhu + '&deg; C';
     document.getElementById('ph').innerHTML = data.pH + ' ';
+    
+    if(data.pH > 6.5 && data.pH < 7.5){
+        $('#status_ph').addClass('text-success')
+        $('#status_ph').removeClass('text-danger')
+    } else {
+        $('#status_ph').addClass('text-danger')
+        $('#status_ph').removeClass('text-success')
+    }
+    if(data.suhu > 25 && data.suhu < 40){
+        $('#status_suhu').addClass('text-success')
+        $('#status_suhu').removeClass('text-danger')
+    } else {
+        $('#status_suhu').addClass('text-danger')
+        $('#status_suhu').removeClass('text-success')
+    }
     $('#status_ph').html(data.ketPH)
     $('#status_suhu').html(data.ketSUHU)
     $('.jamAwal').html(data.jamAwal)
