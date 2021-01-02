@@ -1,11 +1,10 @@
 
 
-    // if ((sessionStorage.getItem('login') == 'false') || (sessionStorage.getItem('login') == null)) {
-    //     alert('Login sulu boss');
-    //     location.href = 'indexlogin.php';
-    //     return false;
-    // } else {
-
+    if ((sessionStorage.getItem('login') == 'false') || (sessionStorage.getItem('login') == null)) {
+        alert('Login sulu boss');
+        location.href = 'indexlogin.php';
+        // return false;
+    } else {
         // Your web app's Firebase configuration
         var firebaseConfig = {
             apiKey: "AIzaSyA6Rld-TFq2NdBMgB5F0Wm9Iv6w30cDB-8",
@@ -23,7 +22,7 @@
         var ref = database.ref().child("alat/data_alat");
         ref.on('value', getData, errData);
 
-    // }
+    }
 
 function getData(snap) {
     var data = snap.val();
