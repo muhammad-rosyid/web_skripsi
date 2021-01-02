@@ -1,8 +1,8 @@
 
 
     // if ((sessionStorage.getItem('login') == 'false') || (sessionStorage.getItem('login') == null)) {
-    //     // alert('Login sulu boss');
-    //     location.href = 'login2.php';
+    //     alert('Login sulu boss');
+    //     location.href = 'indexlogin.php';
     //     return false;
     // } else {
 

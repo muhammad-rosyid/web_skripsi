@@ -41,17 +41,17 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-55 m-b-35" data-validate = "Enter username">
-						<input class="input100" type="text" name="username">
+						<input class="input100" type="text" name="username" id="username">
 						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="pass" id="password">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" id="btn-login">
 							Login
 						</button>
 					</div>
@@ -78,6 +78,8 @@
 						</li>
 					</ul>
 				</form>
+				<label class="setuser" id="setuser" name="setuser" style="display: none;"></label>
+          		<label class="setpass" id="setpass" name="setpass" style="display: none;"></label>
 			</div>
 		</div>
 	</div>
@@ -100,7 +102,42 @@
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
+	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+	<!-- <script src="js/fire.js"></script> -->
 	<script src="js/main.js"></script>
+	<script src="js/koneksi.js"></script>
+
+	<script>
+		$('#btn-login').on('click', function(){
+          login();
+        }) 
+
+        $('#password').on('keyup', function(e){
+          if(e.keyCode == 13){
+            login();
+          }
+        })
+
+        function login(){
+            var username = $('#username').val();
+            var password = $('#password').val();
+            var setuser = $('#setuser').html();
+            var setpass = $('#setpass').html();
+
+            if((username == setuser) && (password == setpass)){
+              sessionStorage.setItem('login', 'true');
+              // window.location.href = '';
+              window.location.assign("index.php");
+              return false;
+            } else {
+                console.log('gagal masuk');
+				alert('password salah boss');
+				return false;
+                // window.location.href = 'login2.php';
+            }
+        }
+	</script>
 
 </body>
 </html>
