@@ -1,7 +1,7 @@
 
 
     if ((sessionStorage.getItem('login') == 'false') || (sessionStorage.getItem('login') == null)) {
-        alert('Login sulu boss');
+        alert('Silahkan login terlebih dahulu');
         location.href = 'indexlogin.php';
         // return false;
     } else {
@@ -38,14 +38,14 @@ function getData(snap) {
     document.getElementById('suhu').innerHTML = data.suhu + '&deg; C';
     document.getElementById('ph').innerHTML = data.pH + ' ';
     
-    if(data.pH > 6.5 && data.pH < 7.5){
+    if(data.pH >= 6.0 && data.pH <= 8.0){
         $('#status_ph').addClass('text-success')
         $('#status_ph').removeClass('text-danger')
     } else {
         $('#status_ph').addClass('text-danger')
         $('#status_ph').removeClass('text-success')
     }
-    if(data.suhu > 25 && data.suhu < 40){
+    if(data.suhu >= 22 && data.suhu <= 28){
         $('#status_suhu').addClass('text-success')
         $('#status_suhu').removeClass('text-danger')
     } else {

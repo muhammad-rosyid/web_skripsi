@@ -15,6 +15,11 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <?php
+            function getDateLink(){
+                return '?'.md5(date('dmYHis'));
+            }
+        ?>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -536,7 +541,7 @@
 
         <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
-        <script src="js/fire.js"></script>
+        <script src="js/fire.js<?= getDateLink() ?>"></script>
 
         <script>
             $('#setWaktu').submit(function(e){
