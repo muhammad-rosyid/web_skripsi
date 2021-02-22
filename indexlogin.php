@@ -132,7 +132,7 @@
               return false;
             } else {
                 console.log('gagal masuk');
-				alert('password salah boss');
+				alert('Password salah');
 				return false;
                 // window.location.href = 'login2.php';
             }
